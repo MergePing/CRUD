@@ -1,5 +1,6 @@
 package com.ohgiraffers.common;
 
+import com.ohgiraffers.model.dao.EmployeeMapper_LES;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -17,6 +18,7 @@ public class Template {
             try {
                 InputStream inputStream = Resources.getResourceAsStream(resource);
                 sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
+                sqlSessionFactory.getConfiguration().addMapper(EmployeeMapper_LES.class);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
