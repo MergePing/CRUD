@@ -18,7 +18,7 @@ public class Application {
             int noAnswer = sc.nextInt();
 
             switch (noAnswer) {
-                case 1 : empControl.allMenu(); break;
+                case 1 : empControl.allEmployee(); break;
                 default:
                     System.out.println("잘못된 메뉴를 선택했습니다."); break;
             }
