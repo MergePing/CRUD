@@ -5,22 +5,25 @@
 <configuration>
     <properties resource="config/connection-info.properties"/>
 
-    <typeAliases>
-        <typeAlias type="com.ohgiraffers.common.SearchCriteria" alias="SearchCriteria"/>
-    </typeAliases>
+<!--    <typeAliases>-->
+<!--        <typeAlias type="com.ohgiraffers.common.SearchCriteria" alias="SearchCriteria"/>-->
+<!--    </typeAliases>-->
 
     <environments default="dev">
         <environment id="dev">
-            <transactionManager type="JDBC" />
+            <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}" />
-                <property name="url" value="${url}" />
-                <property name="username" value="${username}" />
-                <property name="password" value="${password}" />
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <package name="com.ohgiraffers.model.dao"/>
+<!--         매퍼 인터페이스의 경로 위치  / 사용      -->
+        <mapper resource = "com/ohgiraffers/model/dao/EmployeeMapper_LHJ.xml"/>
+<!--        매퍼 인터페이스 패키지 위치 => . 사용   -> 이걸 사용하면 안나와서 위에 것을 사용했다. -->
+<!--        <package name="com.ohgiraffers.model.dao"/>-->
     </mappers>
 </configuration>

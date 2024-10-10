@@ -2,13 +2,24 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="employeeMapper">
-    <resultMap id="employeeResultMap" type="com.ohgiraffers.model.dao.EmployeeMapper_LHJ">
+<mapper namespace="com.ohgiraffers.model.dao.EmployeeMapper_LHJ">
+    <resultMap id="employeeResultMap" type="com.ohgiraffers.model.dto.EmployeeDTO">
         <id property="empId" column="EMP_ID"/>
         <result property="empName" column="EMP_NAME"/>
-        <result property="empName" column="EMP_NAME"/>
-        <result property="empName" column="EMP_NAME"/>
-        <result property="empName" column="EMP_NAME"/>
+        <result property="empNo" column="EMP_NO"/>
+        <result property="email" column="EMAIL"/>
+        <result property="phone" column="PHONE"/>
     </resultMap>
 
+    <select id="allEmployee" resultMap="employeeResultMap">
+        SELECT
+               EMP_ID,
+               EMP_NAME,
+               EMP_NO,
+               EMAIL,
+               PHONE
+          FROM EMPLOYEE
+         WHERE ENT_YN = 'N'
+        ORDER BY EMP_ID
+    </select>
 </mapper>

@@ -1,28 +1,27 @@
 package com.ohgiraffers.run;
 
-import com.ohgiraffers.controller.EmployeeController_LHJ;
+import com.ohgiraffers.controller.EmployeeController;
 
 import java.util.Scanner;
 
 public class Application {
 
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        EmployeeController_LHJ empCon = new EmployeeController_LHJ();
+
+        EmployeeController empControl = new EmployeeController();
 
         do {
-            System.out.println("========== 이호준 : 마이바티스 기본 구현 실습 ==========");
-            System.out.println("1. 전체 조회");
-            int numAnswer = sc.nextInt();
+            System.out.println("========== 직원 데이터베이스 옵션 ==========");
+            System.out.println("1. 직원 전체 조회");
+            int noAnswer = sc.nextInt();
 
-            switch (numAnswer) {
-                case 1 : empCon.allEmployee();
+            switch (noAnswer) {
+                case 1 : empControl.allMenu(); break;
+                default:
+                    System.out.println("잘못된 메뉴를 선택했습니다."); break;
             }
-        }while(true);
+        } while (true);
     }
-
-
-
-
-
 }
