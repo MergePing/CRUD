@@ -18,6 +18,7 @@ public class Application {
             System.out.println("========== 직원 데이터베이스 옵션 ==========");
             System.out.println("1. 직원 전체 조회");
             System.out.println("2. 직원 아이디 조회");
+            System.out.print("사용할 메뉴의 번호를 입력해주세요 : ");
             int noAnswer = sc.nextInt();
 
             switch (noAnswer) {
@@ -31,7 +32,7 @@ public class Application {
 
     private static Map<String, String> inputCode() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("검색할 직원의 아이디를 입력하세요.");
+        System.out.print("검색할 직원의 아이디를 입력하세요 : ");
         String id = sc.nextLine();
 
         Map<String, String> parameter = new HashMap<>();
