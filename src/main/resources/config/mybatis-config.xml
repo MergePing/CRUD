@@ -5,20 +5,21 @@
 <configuration>
     <properties resource="config/connection-info.properties"/>
 
-
     <environments default="dev">
         <environment id="dev">
-            <transactionManager type="JDBC" />
+            <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}" />
-                <property name="url" value="${url}" />
-                <property name="username" value="${username}" />
-                <property name="password" value="${password}" />
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
         <mapper resource="com/ohgiraffers/model/dao/EmployeeMapper_HSB.xml"/>
+        <mapper resource = "com/ohgiraffers/model/dao/EmployeeMapper_LES.xml"/>
+        <mapper resource = "com/ohgiraffers/model/dao/EmployeeMapper_LHJ.xml"/>
 <!--        <package name="com.ohgiraffers.model.dao"/>-->
     </mappers>
 </configuration>
