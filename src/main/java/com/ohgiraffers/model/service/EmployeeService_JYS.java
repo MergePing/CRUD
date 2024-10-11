@@ -8,17 +8,17 @@ import java.util.List;
 
 public class EmployeeService_JYS {
 
-    private final SqlSessionFactory sqlSessionFactory;
 
-    public EmployeeService_JYS(SqlSessionFactory sqlSessionFactory) {
-        this.sqlSessionFactory = sqlSessionFactory;
+
+    public EmployeeService_JYS() {
+
     }
 
-    public List<EmployeeDTO> getAllMembers() {
-        try (SqlSession session = sqlSessionFactory.openSession()) {
-            EmployeeMapper_JYS mapper = session.getMapper(EmployeeMapper_JYS.class);
-            return mapper.selectAllMember(); // EmployeeMapper_JYS에 정의된 selectAllMember() 메서드 호출
-        }
+//    public List<EmployeeDTO> getAllMembers() {
+//        try (SqlSession session = sqlSessionFactory.openSession()) {
+//            EmployeeMapper_JYS mapper = session.getMapper(EmployeeMapper_JYS.class);
+//            return mapper.selectAllMember(); // EmployeeMapper_JYS에 정의된 selectAllMember() 메서드 호출
+//        }
     }
 
 //    public void updateMember(String empId, String newName, String newNo, String newMail, String newPhone) {
@@ -26,5 +26,5 @@ public class EmployeeService_JYS {
 //            EmployeeMapper_JYS mapper = session.getMapper(EmployeeMapper_JYS.class);
 //            mapper.updateMember(empId, newName, newNo, newMail, newPhone);
 //            session.commit(); // 수동 커밋
-        }
+
 

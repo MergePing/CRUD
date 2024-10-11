@@ -3,6 +3,7 @@ package com.ohgiraffers.controller;
 
 
 import com.ohgiraffers.model.dto.EmployeeDTO;
+import com.ohgiraffers.model.service.EmployeeService_JYS;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import java.util.List;
@@ -10,10 +11,12 @@ import java.util.Scanner;
 
 public class EmployeeController_JYS {
 
-    private final com.ohgiraffers.model.service.EmployeeService_JYS employeeService;
+    private final PrintResult_JYS printResult;
+    private final EmployeeService_JYS employeeService;
 
-    public EmployeeController_JYS(SqlSessionFactory sqlSessionFactory) {
-        this.employeeService = new com.ohgiraffers.model.service.EmployeeService_JYS(sqlSessionFactory);
+    public EmployeeController_JYS() {
+        printResult = new PrintResult_JYS();
+        employeeService = new EmployeeService_JYS();
     }
 
     public void selectAllMembers() {

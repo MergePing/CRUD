@@ -14,7 +14,7 @@ public class View_JYS {
         SqlSessionFactory sqlSessionFactory = Template.getSqlSessionFactory();
 
         // EmployeeController_JYS 인스턴스 생성
-        EmployeeController_JYS empControll = new EmployeeController_JYS(sqlSessionFactory);
+        EmployeeController_JYS empControll = new EmployeeController_JYS();
 
         do {
             System.out.println("======= 직원 관리 ======== ");
@@ -30,8 +30,8 @@ public class View_JYS {
                     empControll.selectAllMembers();
                     break;
                 case 2:
-                    empControll.updateMember();
-                    break;
+//                    empControll.updateMember();
+//                    break;
                 default:
                     System.out.println("잘못된 번호를 입력하셨습니다.");
                     break;
