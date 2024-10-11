@@ -23,19 +23,19 @@ public class EmployeeService_LES {
         return empList;
     }
 
-//    public List<EmployeeDTO> insertEmpInfo(Map<String, String> criteria) {
-//        SqlSession sqlSession = getSqlSession();
-//        EmployeeMapper_LES employeeMapperLes = sqlSession.getMapper(EmployeeMapper_LES.class);
-//
-//        int result = employeeMapperLes.insertEmpInfo(criteria);
-//        if (result>0){
-//            sqlSession.commit();
-//        }else {
-//            sqlSession.rollback();
-//        }
-//
-//        sqlSession.close();
-//
-//        return c
-//    }
+    public boolean insertEmpInfo(EmployeeDTO employeeDTO) {
+        SqlSession sqlSession = getSqlSession();
+        EmployeeMapper_LES employeeMapperLes = sqlSession.getMapper(EmployeeMapper_LES.class);
+
+        int result = employeeMapperLes.insertEmpInfo(employeeDTO);
+        if (result>0){
+            sqlSession.commit();
+        }else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+
+        return result > 0 ? true:false;
+    }
 }
