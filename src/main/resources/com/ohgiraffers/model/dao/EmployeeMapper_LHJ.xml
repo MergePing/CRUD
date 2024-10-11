@@ -22,4 +22,16 @@
          WHERE ENT_YN = 'N'
         ORDER BY EMP_ID
     </select>
+    
+    <select id="idEmployee" resultMap="employeeResultMap">
+        SELECT
+               EMP_ID,
+               EMP_NAME,
+               EMP_NO,
+               EMAIL,
+               PHONE
+          FROM EMPLOYEE
+         WHERE ENT_YN = 'N'
+           AND EMP_ID = #{ id }
+    </select>
 </mapper>
