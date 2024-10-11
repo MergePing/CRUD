@@ -19,4 +19,12 @@ public class PrintResult_HSB {
         }
         System.out.println(errorMessage);
     }
+
+    public void printSuccessMessage(String successCode){
+        String successMessage = "";
+        switch (successCode) {
+            case "insert" : successMessage = "신규 직원 등록을 성공하였습니다."; break;
+        }
+        System.out.println(successMessage);
+    }
 }

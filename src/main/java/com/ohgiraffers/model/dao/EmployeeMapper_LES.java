@@ -7,4 +7,6 @@ import java.util.List;
 public interface EmployeeMapper_LES {
 
     List<EmployeeDTO> selectAllEmp();
+
+    int insertEmpInfo(EmployeeDTO employeeDTO);
 }
