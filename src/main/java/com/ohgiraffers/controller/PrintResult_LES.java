@@ -19,7 +19,7 @@ public class PrintResult_LES {
         }
     }
 
-//    public void printSuccessMessage(String insertEmpInfo) {
-//        String successMessage
-//    }
+    public void printSuccessMessage(String insertEmpInfo) {
+        String successMessage
+    }
 }

@@ -23,7 +23,7 @@ public class View_LES {
 
             switch (no){
                 case 1: menuControllerLES.selectAllEmp();break;
-//                case 2: menuControllerLES.insertEmpInfo(inputInsertinfo()); break;
+                case 2: menuControllerLES.insertEmpInfo(inputInsertinfo()); break;
                 default:
                     System.out.println("잘못된 메뉴를 선택하셨습니다");
             }
