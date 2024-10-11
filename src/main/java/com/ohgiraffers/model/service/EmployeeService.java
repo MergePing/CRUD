@@ -1,6 +1,4 @@
-package com.ohgiraffers.service;
-
-
+package com.ohgiraffers.model.service;
 
 import com.ohgiraffers.model.dao.EmployeeMapper_JYS;
 import com.ohgiraffers.model.dto.EmployeeDTO;

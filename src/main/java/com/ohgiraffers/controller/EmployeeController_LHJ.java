@@ -6,13 +6,13 @@ import com.ohgiraffers.model.service.EmployeeService_LHJ;
 import java.util.List;
 import java.util.Map;
 
-public class EmployeeController {
+public class EmployeeController_LHJ {
 
 
     private final PrintResult_LHJ printResult;
     private final EmployeeService_LHJ empService;
 
-    public EmployeeController() {
+    public EmployeeController_LHJ() {
         printResult = new PrintResult_LHJ();
         empService = new EmployeeService_LHJ();
     }
@@ -40,20 +40,22 @@ public class EmployeeController {
         }
     }
 
-    public void importEmployee(Map<String, String> parameter) {
+    public void insertEmployee(Map<String, String> parameter) {
 
-        String name =parameter.get("name");
-        String no = parameter.get("no");
+        String empId = parameter.get("empId");
+        String empName =parameter.get("empName");
+        String empNo = parameter.get("empNo");
         String email = parameter.get("email");
         String phone = parameter.get("phone");
 
         EmployeeDTO empDTO = new EmployeeDTO();
-        empDTO.setEmpName(name);
-        empDTO.setEmpNo(no);
+        empDTO.setEmpId(empId);
+        empDTO.setEmpName(empName);
+        empDTO.setEmpNo(empNo);
         empDTO.setEmail(email);
         empDTO.setPhone(phone);
 
-        if(empService.importEmployee(empDTO)) {
+        if(empService.insertEmployee(empDTO)) {
             printResult.printSuccessMessage("addEmployee");
         } else {
             printResult.printErrorMessage("addEmployee");

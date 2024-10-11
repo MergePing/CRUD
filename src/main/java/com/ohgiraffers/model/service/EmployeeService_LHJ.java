@@ -33,12 +33,12 @@ public class EmployeeService_LHJ {
         return emp;
     }
 
-    public boolean importEmployee(EmployeeDTO empDTO) {
+    public boolean insertEmployee(EmployeeDTO empDTO) {
         SqlSession sqlSession = getSqlSession();
 
         EmployeeMapper_LHJ empMapper = sqlSession.getMapper(EmployeeMapper_LHJ.class);
 
-        int result = empMapper.importEmployee(empMapper);
+        int result = empMapper.insertEmployee(empDTO);
 
         if (result > 0) {
             sqlSession.commit();

@@ -35,17 +35,19 @@
            AND EMP_ID = #{ id }
     </select>
 
-    <insert id="importEmployee" parameterType="_int">
+    <insert id="insertEmployee" parameterType="com.ohgiraffers.model.dto.EmployeeDTO">
         INSERT INTO EMPLOYEE
         (
-          EMP_NAME
+          EMP_ID
+        , EMP_NAME
         , EMP_NO
         , EMAIL
         , PHONE
         )
         VALUES
         (
-          #{ empName }
+          #{ empId }
+        , #{ empName }
         , #{ empNo }
         , #{ email }
         , #{ phone }
