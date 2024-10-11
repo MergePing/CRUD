@@ -17,6 +17,7 @@
         </environment>
     </environments>
     <mappers>
+        <mapper resource="com/ohgiraffers/model/dao/EmployeeMapper_HSB.xml"/>
         <mapper resource = "com/ohgiraffers/model/dao/EmployeeMapper_LES.xml"/>
         <mapper resource = "com/ohgiraffers/model/dao/EmployeeMapper_LHJ.xml"/>
 <!--        <package name="com.ohgiraffers.model.dao"/>-->
