@@ -1,6 +1,6 @@
 package com.ohgiraffers.run;
 
-import com.ohgiraffers.controller.EmpController_LES;
+import com.ohgiraffers.controller.EmployeeController_LES;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,7 @@ public class View_LES {
     public static void View_LES() {
 
         Scanner sc = new Scanner(System.in);
-        EmpController_LES menuControllerLES = new EmpController_LES();
+        EmployeeController_LES menuControllerLES = new EmployeeController_LES();
         do{
             System.out.println();
             System.out.println("===== 사원 정보 관리 =====");
@@ -35,18 +35,21 @@ public class View_LES {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("====== * 표시는 필수 입력사항 입니다 ======");
+        System.out.println("====== 사번은 223번 부터 입력 가능합니다 ======");
+        System.out.print("* 추가할 사원의 사번을 입력하세요 : ");
+        String id =sc.nextLine();
         System.out.print("* 추가할 사원의 이름을 입력하세요 : ");
         String name = sc.nextLine();
         System.out.print("* 추가할 사원의 주민등록번호를 입력하세요(ex - 111111-222222) : ");
-        sc.nextLine();
         String num = sc.nextLine();
-        System.out.print("추가할 사원의 전화번호를 입력하세요 : ");
-        String phone = sc.nextLine();
         System.out.print("추가할 사원의 이메일 주소를 입력하세요 : ");
         String email = sc.nextLine();
+        System.out.print("추가할 사원의 전화번호를 입력하세요 : ");
+        String phone = sc.nextLine();
 
         Map<String,String> criteria = new HashMap<>();
 
+        criteria.put("id",id);
         criteria.put("name",name);
         criteria.put("num",num);
         criteria.put("phone",phone);

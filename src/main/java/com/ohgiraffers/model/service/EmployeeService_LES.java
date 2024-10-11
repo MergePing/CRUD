@@ -23,11 +23,11 @@ public class EmployeeService_LES {
         return empList;
     }
 
-    public List<EmployeeDTO> insertEmpInfo(Map<String, String> criteria) {
+    public boolean insertEmpInfo(EmployeeDTO employeeDTO) {
         SqlSession sqlSession = getSqlSession();
         EmployeeMapper_LES employeeMapperLes = sqlSession.getMapper(EmployeeMapper_LES.class);
 
-        int result = employeeMapperLes.insertEmpInfo(criteria);
+        int result = employeeMapperLes.insertEmpInfo(employeeDTO);
         if (result>0){
             sqlSession.commit();
         }else {
@@ -36,6 +36,6 @@ public class EmployeeService_LES {
 
         sqlSession.close();
 
-        return c
+        return result > 0 ? true:false;
     }
 }

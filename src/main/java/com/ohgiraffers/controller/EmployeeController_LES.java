@@ -6,7 +6,7 @@ import com.ohgiraffers.model.dto.EmployeeDTO;
 import java.util.List;
 import java.util.Map;
 
-public class EmpController_LES {
+public class EmployeeController_LES {
 
     private final PrintResult_LES printResultLes;
 
@@ -14,7 +14,7 @@ public class EmpController_LES {
 
 
 
-public EmpController_LES(){
+public EmployeeController_LES(){
     printResultLes = new PrintResult_LES();
     employeeServiceLes = new EmployeeService_LES();
 }
@@ -29,17 +29,19 @@ public EmpController_LES(){
     }
 
     public void insertEmpInfo(Map<String, String> criteria) {
-    List<EmployeeDTO> empList = employeeServiceLes.insertEmpInfo(criteria);
+
+    String id = criteria.get("id");
     String name = criteria.get("name");
     String num = criteria.get("num");
     String phone = criteria.get("phone");
     String email = criteria.get("email");
 
     EmployeeDTO employeeDTO = new EmployeeDTO();
+    employeeDTO.setEmpId(id);
     employeeDTO.setEmpName(name);
-    employeeDTO.setEmpName(num);
-    employeeDTO.setEmpName(phone);
-    employeeDTO.setEmpName(email);
+    employeeDTO.setEmpNo(num);
+    employeeDTO.setPhone(phone);
+    employeeDTO.setEmail(email);
 
         if (employeeServiceLes.insertEmpInfo(employeeDTO)){
             printResultLes.printSuccessMessage("insertEmpInfo");
