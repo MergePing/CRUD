@@ -21,12 +21,12 @@ public class EmployeeService_LHJ {
         return empList;
     }
 
-    public EmployeeDTO codeEmployee(int code) {
+    public EmployeeDTO idEmployee(int id) {
         SqlSession sqlSession = getSqlSession();
 
         EmployeeMapper_LHJ empMapper = sqlSession.getMapper(EmployeeMapper_LHJ.class);
 
-        EmployeeDTO emp = empMapper.codeEmployee(code);
+        EmployeeDTO emp = empMapper.idEmployee(id);
 
         sqlSession.close();
 

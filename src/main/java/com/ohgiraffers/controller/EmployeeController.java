@@ -28,10 +28,10 @@ public class EmployeeController {
         }
     }
 
-    public void codeEmployee(Map<String, String> parameter) {
-        int code = Integer.parseInt(parameter.get("code"));
+    public void idEmployee(Map<String, String> parameter) {
+        int id = Integer.parseInt(parameter.get("id"));
 
-        EmployeeDTO emp = empService.codeEmployee(code);
+        EmployeeDTO emp = empService.idEmployee(id);
 
         if(emp != null) {
             printResult.printEmployee(emp);

@@ -22,7 +22,7 @@ public class Application {
 
             switch (noAnswer) {
                 case 1 : empControl.allEmployee(); break;
-                case 2 : empControl.codeEmployee(inputCode()); break;
+                case 2 : empControl.idEmployee(inputCode()); break;
                 default:
                     System.out.println("잘못된 메뉴를 선택했습니다."); break;
             }
@@ -32,10 +32,10 @@ public class Application {
     private static Map<String, String> inputCode() {
         Scanner sc = new Scanner(System.in);
         System.out.println("검색할 직원의 코드를 입력하세요.");
-        String code = sc.nextLine();
+        String id = sc.nextLine();
 
         Map<String, String> parameter = new HashMap<>();
-        parameter.put("code", code);
+        parameter.put("id", id);
 
         return parameter;
     }

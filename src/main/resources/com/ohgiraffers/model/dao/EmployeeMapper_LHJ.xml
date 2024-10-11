@@ -23,7 +23,7 @@
         ORDER BY EMP_ID
     </select>
     
-    <select id="codeEmployee" resultMap="employeeResultMap">
+    <select id="idEmployee" resultMap="employeeResultMap">
         SELECT
                EMP_ID,
                EMP_NAME,
@@ -32,6 +32,6 @@
                PHONE
           FROM EMPLOYEE
          WHERE ENT_YN = 'N'
-           AND EMP_ID = #{ code }
+           AND EMP_ID = #{ id }
     </select>
 </mapper>
