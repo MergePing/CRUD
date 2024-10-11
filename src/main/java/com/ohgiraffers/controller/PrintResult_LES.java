@@ -15,6 +15,11 @@ public class PrintResult_LES {
         String errorMessage = "";
         switch (error){
             case "selectAllEmp" : errorMessage ="전제 조회에 실패했습니다";
+            case "insertEmpInfo" : errorMessage ="정보 등록에 실패했습니다";
         }
     }
+
+//    public void printSuccessMessage(String insertEmpInfo) {
+//        String successMessage
+//    }
 }
