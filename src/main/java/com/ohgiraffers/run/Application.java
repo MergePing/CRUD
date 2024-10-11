@@ -1,11 +1,8 @@
 package com.ohgiraffers.run;
 
-import com.ohgiraffers.controller.EmployeeController;
-
 import java.util.Scanner;
 
 public class Application {
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -23,5 +20,6 @@ public class Application {
                     System.out.println("잘못된 메뉴를 선택했습니다."); break;
             }
         } while (true);
+
     }
 }

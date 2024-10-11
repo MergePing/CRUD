@@ -1,5 +1,6 @@
 package com.ohgiraffers.common;
 
+import com.ohgiraffers.model.dao.EmployeeMapper_LES;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
