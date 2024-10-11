@@ -20,4 +20,16 @@ public class EmployeeService_LHJ {
 
         return empList;
     }
+
+    public EmployeeDTO codeEmployee(int code) {
+        SqlSession sqlSession = getSqlSession();
+
+        EmployeeMapper_LHJ empMapper = sqlSession.getMapper(EmployeeMapper_LHJ.class);
+
+        EmployeeDTO emp = empMapper.codeEmployee(code);
+
+        sqlSession.close();
+
+        return emp;
+    }
 }

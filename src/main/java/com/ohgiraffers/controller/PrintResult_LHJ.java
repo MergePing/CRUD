@@ -21,6 +21,7 @@ public class PrintResult_LHJ {
 
         switch (errorCode) {
             case "allEmp" : errorMessage = "전체 직원 조회에 실패했습니다."; break;
+            case "selectEmp" : errorMessage = "직원 코드 조회에 실패했습니다."; break;
         }
         System.out.println(errorMessage);
     }

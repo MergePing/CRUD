@@ -4,6 +4,7 @@ import com.ohgiraffers.model.dto.EmployeeDTO;
 import com.ohgiraffers.model.service.EmployeeService_LHJ;
 
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeController {
 
@@ -24,6 +25,18 @@ public class EmployeeController {
             printResult.printEmployeeList(empList);
         } else {
             printResult.printErrorMessage("allEmp");
+        }
+    }
+
+    public void codeEmployee(Map<String, String> parameter) {
+        int code = Integer.parseInt(parameter.get("code"));
+
+        EmployeeDTO emp = empService.codeEmployee(code);
+
+        if(emp != null) {
+            printResult.printEmployee(emp);
+        } else {
+            printResult.printErrorMessage("selectEmp");
         }
     }
 }
