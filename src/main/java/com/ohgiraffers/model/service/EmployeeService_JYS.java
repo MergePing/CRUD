@@ -6,11 +6,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import java.util.List;
 
-public class EmployeeService {
+public class EmployeeService_JYS {
 
     private final SqlSessionFactory sqlSessionFactory;
 
-    public EmployeeService(SqlSessionFactory sqlSessionFactory) {
+    public EmployeeService_JYS(SqlSessionFactory sqlSessionFactory) {
         this.sqlSessionFactory = sqlSessionFactory;
     }
 
