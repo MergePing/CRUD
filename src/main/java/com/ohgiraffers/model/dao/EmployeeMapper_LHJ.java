@@ -8,4 +8,6 @@ public interface EmployeeMapper_LHJ {
     EmployeeDTO idEmployee(int id);
 
     List<EmployeeDTO> allEmployee();
+
+    int importEmployee(EmployeeMapper_LHJ empMapper);
 }

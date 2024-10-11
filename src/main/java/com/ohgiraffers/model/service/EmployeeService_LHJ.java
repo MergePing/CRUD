@@ -32,4 +32,21 @@ public class EmployeeService_LHJ {
 
         return emp;
     }
+
+    public boolean importEmployee(EmployeeDTO empDTO) {
+        SqlSession sqlSession = getSqlSession();
+
+        EmployeeMapper_LHJ empMapper = sqlSession.getMapper(EmployeeMapper_LHJ.class);
+
+        int result = empMapper.importEmployee(empMapper);
+
+        if (result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+
+        return result > 0? true : false;
+    }
 }

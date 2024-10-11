@@ -34,4 +34,21 @@
          WHERE ENT_YN = 'N'
            AND EMP_ID = #{ id }
     </select>
+
+    <insert id="importEmployee" parameterType="_int">
+        INSERT INTO EMPLOYEE
+        (
+          EMP_NAME
+        , EMP_NO
+        , EMAIL
+        , PHONE
+        )
+        VALUES
+        (
+          #{ empName }
+        , #{ empNo }
+        , #{ email }
+        , #{ phone }
+        )
+    </insert>
 </mapper>
