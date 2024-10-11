@@ -22,4 +22,21 @@ public class EmployeeService_HSB {
         return employeeList;
 
     }
+
+    public boolean insertMenu(EmployeeDTO employeeDTO) {
+
+        SqlSession sqlSession = getSqlSession();
+        EmployeeMapper_HSB employeeMapper = sqlSession.getMapper(EmployeeMapper_HSB.class);
+
+        int result = employeeMapper.insertEmployee(employeeDTO);
+
+        if (result >0) {
+            sqlSession.commit();
+        }else{
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+
+        return result > 0 ? true : false;
+    }
 }

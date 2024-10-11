@@ -1,4 +1,4 @@
-package com.ohgiraffers.service;
+package com.ohgiraffers.model.service;
 
 
 

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface EmployeeMapper_HSB {
     List<EmployeeDTO> selectAllEmployee();
+
+    int insertEmployee(EmployeeDTO employeeDTO);
 }
