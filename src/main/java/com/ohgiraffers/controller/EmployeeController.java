@@ -39,4 +39,26 @@ public class EmployeeController {
             printResult.printErrorMessage("selectEmp");
         }
     }
+
+    public void importEmployee(Map<String, String> parameter) {
+
+        String name =parameter.get("name");
+        String no = parameter.get("no");
+        String email = parameter.get("email");
+        String phone = parameter.get("phone");
+
+        EmployeeDTO empDTO = new EmployeeDTO();
+        empDTO.setEmpName(name);
+        empDTO.setEmpNo(no);
+        empDTO.setEmail(email);
+        empDTO.setPhone(phone);
+
+        if(empService.importEmployee(empDTO)) {
+            printResult.printSuccessMessage("addEmployee");
+        } else {
+            printResult.printErrorMessage("addEmployee");
+        }
+
+
+    }
 }
