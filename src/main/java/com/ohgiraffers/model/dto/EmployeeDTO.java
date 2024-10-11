@@ -1,7 +1,7 @@
 package com.ohgiraffers.model.dto;
 
 public class EmployeeDTO {
-    private int empId;
+    private String empId;
     private String empName;
     private String empNo;
     private String email;
@@ -9,7 +9,7 @@ public class EmployeeDTO {
 
     public EmployeeDTO(){}
 
-    public EmployeeDTO(int empId, String empName, String empNo, String email, String phone) {
+    public EmployeeDTO(String empId, String empName, String empNo, String email, String phone) {
         this.empId = empId;
         this.empName = empName;
         this.empNo = empNo;
@@ -17,11 +17,11 @@ public class EmployeeDTO {
         this.phone = phone;
     }
 
-    public int getEmpId() {
+    public String getEmpId() {
         return empId;
     }
 
-    public void setEmpId(int empId) {
+    public void setEmpId(String empId) {
         this.empId = empId;
     }
 

@@ -16,7 +16,7 @@ public class Template {
             String resource = "config/mybatis-config.xml";
             try {
                 InputStream inputStream = Resources.getResourceAsStream(resource);
-                sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
+                sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
