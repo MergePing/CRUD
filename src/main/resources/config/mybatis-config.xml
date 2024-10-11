@@ -5,9 +5,6 @@
 <configuration>
     <properties resource="config/connection-info.properties"/>
 
-    <typeAliases>
-        <typeAlias type="com.ohgiraffers.common.SearchCriteria" alias="SearchCriteria"/>
-    </typeAliases>
 
     <environments default="dev">
         <environment id="dev">
@@ -21,6 +18,7 @@
         </environment>
     </environments>
     <mappers>
-        <package name="com.ohgiraffers.model.dao"/>
+        <mapper resource="com/ohgiraffers/model/dao/EmployeeMapper_HSB.xml"/>
+<!--        <package name="com.ohgiraffers.model.dao"/>-->
     </mappers>
 </configuration>
