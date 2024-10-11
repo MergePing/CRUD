@@ -3,7 +3,7 @@ package com.ohgiraffers.controller;
 
 
 import com.ohgiraffers.model.dto.EmployeeDTO;
-import com.ohgiraffers.service.EmployeeService;
+import com.ohgiraffers.model.service.EmployeeService;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import java.util.List;
