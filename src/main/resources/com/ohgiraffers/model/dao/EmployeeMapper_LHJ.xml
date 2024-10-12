@@ -69,4 +69,10 @@
         , PHONE = #{ phone }
         WHERE EMP_ID = #{ empId }-->
     </update>
+
+    <delete id="deleteEmployee" parameterType="String">
+        DELETE
+          FROM EMPLOYEE
+         WHERE EMP_ID = #{ id }
+    </delete>
 </mapper>

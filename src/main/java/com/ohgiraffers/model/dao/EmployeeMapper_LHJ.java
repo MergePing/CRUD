@@ -12,4 +12,6 @@ public interface EmployeeMapper_LHJ {
     int insertEmployee(EmployeeDTO empDTO);
 
     int updateEmployee(EmployeeDTO empDTO);
+
+    int deleteEmployee(String id);
 }

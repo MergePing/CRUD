@@ -24,6 +24,7 @@ public class PrintResult_LHJ {
             case "selectEmp" : errorMessage = "직원의 아이디 조회에 실패했습니다."; break;
             case "addEmloyee" : errorMessage = "직원 정보 추가를 실패했습니다."; break;
             case "updateEmployee" : errorMessage = "직원 정보 변경에 성공했습니다."; break;
+            case "deleteEmp" : errorMessage = "직원 정보 제거에 성공했습니다."; break;
         }
         System.out.println(errorMessage);
     }
@@ -34,6 +35,7 @@ public class PrintResult_LHJ {
         switch (successCode) {
             case "addEmployee" : successMessage = "직원 정보 추가에 성공했습니다."; break;
             case "updateEmloyee" : successMessage = "직원 정보 변경에 성공했습니다."; break;
+            case "deleteEmp" : successMessage = "직원 정보 제거에 성공했습니다."; break;
         }
         System.out.println(successMessage);
     }
