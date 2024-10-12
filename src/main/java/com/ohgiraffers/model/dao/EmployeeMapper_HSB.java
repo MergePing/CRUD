@@ -8,4 +8,6 @@ public interface EmployeeMapper_HSB {
     List<EmployeeDTO> selectAllEmployee();
 
     int insertEmployee(EmployeeDTO employeeDTO);
+
+    int updateEmployee(EmployeeDTO employeeDTO);
 }

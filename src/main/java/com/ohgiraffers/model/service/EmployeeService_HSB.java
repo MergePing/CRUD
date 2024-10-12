@@ -39,4 +39,18 @@ public class EmployeeService_HSB {
 
         return result > 0 ? true : false;
     }
+
+    public boolean modifyEmployee(EmployeeDTO employeeDTO) {
+        SqlSession sqlSession = getSqlSession();
+        EmployeeMapper_HSB employeeMapper = sqlSession.getMapper(EmployeeMapper_HSB.class);
+        int result = employeeMapper.updateEmployee(employeeDTO);
+
+        if (result > 0) {
+            sqlSession.commit();
+        }else{
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+        return result > 0 ? true : false;
+    }
 }
