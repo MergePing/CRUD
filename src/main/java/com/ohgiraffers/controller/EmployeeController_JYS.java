@@ -1,30 +1,33 @@
 package com.ohgiraffers.controller;
 
-
-
 import com.ohgiraffers.model.dto.EmployeeDTO;
+import com.ohgiraffers.model.service.EmployeeService_HSB;
 import com.ohgiraffers.model.service.EmployeeService_JYS;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 import java.util.List;
 
 public class EmployeeController_JYS {
 
-    private final EmployeeService_JYS employeeServiceJYS;
+    private final PrintResult_JYS printResult;
 
-    public EmployeeController_JYS(SqlSessionFactory sqlSessionFactory) {
-        this.employeeServiceJYS = new EmployeeService_JYS(sqlSessionFactory);
+    private final EmployeeService_JYS employeeService;
+
+    public EmployeeController_JYS() {
+        printResult = new PrintResult_JYS();
+        employeeService = new EmployeeService_JYS();
     }
 
-    public void selectAllMembers() {
-        List<EmployeeDTO> members = employeeServiceJYS.getAllMembers();
-        members.forEach(member -> {
-            System.out.println("ID: " + member.getEmpId());
-            System.out.println("Name: " + member.getEmpName());
-            System.out.println("Number: " + member.getEmpNo());
-            System.out.println("Email: " + member.getEmail());
-            System.out.println("Phone: " + member.getPhone());
-            System.out.println("-----------------------------");
-        });
+
+    public void selectAll() {
+        List<EmployeeDTO> employeeList = employeeService.selectAllEmp();
+
+        if (employeeList != null) {
+            printResult.printMemberList(employeeList);
+        } else {
+            printResult.printErrorMessage("selectList");
+        }
     }
 }
+
+
+
