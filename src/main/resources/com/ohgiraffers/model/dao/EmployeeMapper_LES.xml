@@ -48,8 +48,8 @@
             <if test="empName != null and empName =''">
                 EMP_NAME = #{empName}
             </if>
-            <if test="empName != null and empName !=''">
-                ,EMP_NO = #{empName}
+            <if test="empNo != null and empNo !=''">
+                ,EMP_NO = #{empNo}
             </if>
             <if test="phone != null and phone !=''">
                 ,PHONE = #{phone}
