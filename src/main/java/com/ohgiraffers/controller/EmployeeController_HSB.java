@@ -70,4 +70,14 @@ public class EmployeeController_HSB {
             printResult.printErrorMessage("modify");
         }
     }
+
+    public void deleteEmployee(Map<String, String> parameter) {
+        String id = parameter.get("id");
+
+        if(employeeService.deleteEmployeeById(id)){
+            printResult.printSuccessMessage("delete");
+        }else{
+            printResult.printErrorMessage("delete");
+        }
+    }
 }

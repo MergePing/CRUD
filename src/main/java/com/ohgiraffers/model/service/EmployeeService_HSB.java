@@ -53,4 +53,18 @@ public class EmployeeService_HSB {
         sqlSession.close();
         return result > 0 ? true : false;
     }
+
+    public boolean deleteEmployeeById(String id) {
+        SqlSession sqlSession = getSqlSession();
+        EmployeeMapper_HSB employeeMapper = sqlSession.getMapper(EmployeeMapper_HSB.class);
+
+        int result = employeeMapper.deleteEmployee(id);
+        if (result > 0) {
+            sqlSession.commit();
+        }else{
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+        return result > 0 ? true : false;
+    }
 }
