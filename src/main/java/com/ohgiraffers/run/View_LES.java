@@ -63,7 +63,7 @@ public class View_LES {
         return criteria;
     }
 
-    public static Map<String, Object> inputChangeInfo(){
+    public static Map<String, String> inputChangeInfo(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("====== * 표시는 필수 입력사항 입니다 ======");
@@ -79,7 +79,7 @@ public class View_LES {
         System.out.print("수정할 사원의 전화번호를 입력하세요 : ");
         String phone = sc.nextLine();
 
-        Map<String,Object> criteria = new HashMap<>();
+        Map<String,String> criteria = new HashMap<>();
 
         criteria.put("id",id);
         criteria.put("name",name);

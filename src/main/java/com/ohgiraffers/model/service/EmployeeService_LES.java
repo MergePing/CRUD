@@ -40,11 +40,11 @@ public class EmployeeService_LES {
     }
 
 
-    public boolean changeEmpInfo(Map<String,Object> criteria) {
+    public boolean changeEmpInfo(EmployeeDTO employeeDTO) {
         SqlSession sqlSession = getSqlSession();
         EmployeeMapper_LES employeeMapperLes = sqlSession.getMapper(EmployeeMapper_LES.class);
 
-        int result = employeeMapperLes.changeEmpInfo(criteria);
+        int result = employeeMapperLes.changeEmpInfo(employeeDTO);
         if (result>0){
             sqlSession.commit();
         }else {

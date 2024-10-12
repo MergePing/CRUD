@@ -41,15 +41,15 @@
         )
     </insert>
 
-    <update id="changeEmpInfo" parameterType="hashmap">
+    <update id="changeEmpInfo" parameterType="com.ohgiraffers.model.dto.EmployeeDTO">
         UPDATE
         EMPLOYEE
         <set>
-            <if test="name != null and name =''">
+            <if test="empName != null and empName =''">
                 EMP_NAME = #{empName}
             </if>
-            <if test="no != null and no !=''">
-                ,EMP_NO = #{empNo}
+            <if test="empName != null and empName !=''">
+                ,EMP_NO = #{empName}
             </if>
             <if test="phone != null and phone !=''">
                 ,PHONE = #{phone}
