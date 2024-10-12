@@ -38,4 +38,21 @@ public class EmployeeService_LES {
 
         return result > 0 ? true:false;
     }
+
+
+    public boolean changeEmpInfo(Map<String,Object> criteria) {
+        SqlSession sqlSession = getSqlSession();
+        EmployeeMapper_LES employeeMapperLes = sqlSession.getMapper(EmployeeMapper_LES.class);
+
+        int result = employeeMapperLes.changeEmpInfo(criteria);
+        if (result>0){
+            sqlSession.commit();
+        }else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+
+        return result > 0 ? true:false;
+    }
 }

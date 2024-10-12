@@ -40,5 +40,25 @@
         #{email}
         )
     </insert>
+
+    <update id="changeEmpInfo" parameterType="hashmap">
+        UPDATE
+        EMPLOYEE
+        <set>
+            <if test="name != null and name =''">
+                EMP_NAME = #{empName}
+            </if>
+            <if test="no != null and no !=''">
+                ,EMP_NO = #{empNo}
+            </if>
+            <if test="phone != null and phone !=''">
+                ,PHONE = #{phone}
+            </if>
+            <if test="email != null and email !=''">
+                ,EMAIL = #{email}
+            </if>
+        </set>
+        WHERE EMP_ID = #{empId}
+    </update>
 </mapper>
 

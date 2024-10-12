@@ -50,4 +50,14 @@ public EmployeeController_LES(){
         }
 
     }
+
+
+    public void changeEmpInfo(Map<String, Object> criteria) {
+        if (employeeServiceLes.changeEmpInfo(criteria)){
+            printResultLes.printSuccessMessage("changeEmpInfo");
+        }else {
+            printResultLes.printerror("changeEmpInfo");
+        }
+
+    }
 }
