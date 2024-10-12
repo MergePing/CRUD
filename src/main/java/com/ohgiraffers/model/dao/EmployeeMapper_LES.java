@@ -12,4 +12,6 @@ public interface EmployeeMapper_LES {
     int insertEmpInfo(EmployeeDTO employeeDTO);
 
     int changeEmpInfo(EmployeeDTO employeeDTO);
+
+    int deleteEmpInfo(String id);
 }

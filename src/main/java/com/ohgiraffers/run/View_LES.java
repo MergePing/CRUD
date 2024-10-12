@@ -29,6 +29,7 @@ public class View_LES {
                 case 1: empControllerLES.selectAllEmp();break;
                 case 2: empControllerLES.insertEmpInfo(inputInsertinfo()); break;
                 case 3 :empControllerLES.changeEmpInfo(inputChangeInfo());break;
+                case 4: empControllerLES.deleteEmpInfo(inputDeleteInfo());break;
                 default:
                     System.out.println("잘못된 메뉴를 선택하셨습니다");
             }
@@ -86,6 +87,18 @@ public class View_LES {
         criteria.put("num",num);
         criteria.put("phone",phone);
         criteria.put("email",email);
+
+        return criteria;
+    }
+
+    public static Map<String,String> inputDeleteInfo(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("====== * 표시는 필수 입력사항 입니다 ======");
+        System.out.print("* 삭제할 사원의 사번을 입력하세요 : ");
+        String id =sc.nextLine();
+
+        Map<String,String> criteria = new HashMap<>();
+        criteria.put("id",id);
 
         return criteria;
     }
