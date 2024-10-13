@@ -22,6 +22,7 @@
         ORDER BY EMP_ID
     </select>
 
+
     <insert id="insertEmpInfo" parameterType="com.ohgiraffers.model.dto.EmployeeDTO">
         INSERT INTO EMPLOYEE
         (
@@ -40,6 +41,7 @@
         #{email}
         )
     </insert>
+
 
     <update id="changeEmpInfo" parameterType="com.ohgiraffers.model.dto.EmployeeDTO">
         UPDATE
@@ -60,6 +62,7 @@
         </set>
         WHERE EMP_ID = #{empId}
     </update>
+
 
     <delete id="deleteEmpInfo" parameterType="string">
         DELETE
