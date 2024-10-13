@@ -44,7 +44,7 @@ public class EmployeeService_JYS {
 
         SqlSession sqlSession = getSqlSession();
         EmployeeMapper_JYS employeeMapper = sqlSession.getMapper(EmployeeMapper_JYS.class);
-        int result = employeeMapper.updateEmp(employeeDTO);
+        int result = employeeMapper.updateEmployee(employeeDTO);
 
         if (result > 0) {
             sqlSession.commit();
@@ -53,5 +53,19 @@ public class EmployeeService_JYS {
         }
         sqlSession.close();
         return result > 0 ? true : false;
+    }
+
+    public boolean deleteEmployee(String id) {
+        SqlSession sqlSession = getSqlSession();
+        EmployeeMapper_JYS employeeMapper = sqlSession.getMapper(EmployeeMapper_JYS.class);
+
+        int result = employeeMapper.deleteEmployee(id);
+        if (result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+        return result > 0? true : false;
     }
 }

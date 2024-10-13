@@ -32,6 +32,9 @@ public class View_JYS {
                     break;
                 case 3:
                     jys.modifyEmp(updateEmp());
+
+                case 4 :
+                    jys.deleteEmp(inputEmployeeCode());
             }
 
         } while (true);
@@ -83,6 +86,17 @@ public class View_JYS {
         parameter.put("no", no);
         parameter.put("email", email);
         parameter.put("phone", phone);
+        return parameter;
+    }
+
+    public static Map<String, String> inputEmployeeCode() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("삭제할 직원 코드를 입력하세요");
+        String id = sc.nextLine();
+
+        Map<String, String> parameter = new HashMap<>();
+        parameter.put("id", id);
+
         return parameter;
     }
 }

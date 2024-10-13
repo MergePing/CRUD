@@ -71,6 +71,16 @@ public class EmployeeController_JYS {
             printResult.printErrorMessage("modify");
         }
     }
+
+    public void deleteEmp(Map<String, String> parameter) {
+        String id = parameter.get("id");
+
+        if (employeeService.deleteEmployee(id)){
+            printResult.printSuccessMessage("delete");
+        } else {
+            printResult.printErrorMessage("delete");
+        }
+    }
 }
 
 
