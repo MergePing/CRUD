@@ -10,4 +10,6 @@ public interface EmployeeMapper_JYS {
     List<EmployeeDTO> selectAllMember();
 
     int insertEmployee(EmployeeDTO employeeDTO);
+
+    int updateEmp(EmployeeDTO employeeDTO);
 }
