@@ -72,4 +72,14 @@ public EmployeeController_LES(){
             printResultLes.printerror("changeEmpInfo");
         }
     }
+
+    public void deleteEmpInfo(Map<String, String> criteria) {
+        String id = criteria.get("id");
+
+        if (employeeServiceLes.deleteEmpInfo(id)){
+            printResultLes.printSuccessMessage("deleteEmpInfo");
+        }else {
+            printResultLes.printerror("deleteEmpInfo");
+        }
+    }
 }

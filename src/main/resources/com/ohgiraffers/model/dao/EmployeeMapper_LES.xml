@@ -60,5 +60,11 @@
         </set>
         WHERE EMP_ID = #{empId}
     </update>
+
+    <delete id="deleteEmpInfo" parameterType="string">
+        DELETE
+        FROM EMPLOYEE
+        WHERE EMP_ID = #{empId}
+    </delete>
 </mapper>
 
