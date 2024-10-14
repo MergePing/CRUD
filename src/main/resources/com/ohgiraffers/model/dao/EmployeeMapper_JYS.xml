@@ -23,4 +23,23 @@
         ORDER BY EMP_ID ASC
     </select>
 
+    <insert id="insertEmployee" parameterType="com.ohgiraffers.model.dto.EmployeeDTO">
+        INSERT INTO EMPLOYEE
+        (
+        EMP_ID,
+        EMP_NAME,
+        EMP_NO,
+        EMAIL,
+        PHONE
+        )
+        VALUES
+        (
+        #{empId},
+        #{empName},
+        #{empNo},
+        #{email},
+        #{phone}
+        )
+    </insert>
+
 </mapper>
