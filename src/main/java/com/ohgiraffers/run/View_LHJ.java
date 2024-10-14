@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class View_LHJ {
 
-        public static void main(String[] args) {
+        public void viewLHJ() {
             Scanner sc = new Scanner(System.in);
 
             EmployeeController_LHJ empControl = new EmployeeController_LHJ();
