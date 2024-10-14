@@ -33,6 +33,7 @@ public class View_JYS {
                 case 3:
                     jys.modifyEmp(updateEmp());
 
+
                 case 4 :
                     jys.deleteEmp(inputEmployeeCode());
             }
