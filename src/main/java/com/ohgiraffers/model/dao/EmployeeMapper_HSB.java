@@ -10,4 +10,6 @@ public interface EmployeeMapper_HSB {
     int insertEmployee(EmployeeDTO employeeDTO);
 
     int updateEmployee(EmployeeDTO employeeDTO);
+
+    int deleteEmployee(String id);
 }
