@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class View_HSB {
-    public static void main(String[] args) {
+    public void View_HSB() {
 
         Scanner sc = new Scanner(System.in);
         EmployeeController_HSB hsb = new EmployeeController_HSB();

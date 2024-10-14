@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class View_JYS {
 
-    public static void View_JYS() {
+    public void View_JYS() {
 
         Scanner sc = new Scanner(System.in);
         EmployeeController_JYS jys = new EmployeeController_JYS();
