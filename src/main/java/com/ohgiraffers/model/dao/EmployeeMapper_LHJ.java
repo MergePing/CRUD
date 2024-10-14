@@ -9,5 +9,9 @@ public interface EmployeeMapper_LHJ {
 
     List<EmployeeDTO> allEmployee();
 
-    int importEmployee(EmployeeMapper_LHJ empMapper);
+    int insertEmployee(EmployeeDTO empDTO);
+
+    int updateEmployee(EmployeeDTO empDTO);
+
+    int deleteEmployee(String id);
 }
