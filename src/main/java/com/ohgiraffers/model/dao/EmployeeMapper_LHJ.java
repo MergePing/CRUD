@@ -10,4 +10,6 @@ public interface EmployeeMapper_LHJ {
     List<EmployeeDTO> allEmployee();
 
     int insertEmployee(EmployeeDTO empDTO);
+
+    int updateEmployee(EmployeeDTO empDTO);
 }

@@ -63,4 +63,25 @@ public class EmployeeController_LHJ {
 
 
     }
+
+    public void updateEmployee(Map<String, String> parameter) {
+        String id = parameter.get("id"); // 실수로 이걸 안넣으면 변경됐다고 떠도 id로는 인식되지 않아 변경이 아무것도 되지 않으니 주의
+        String name = parameter.get("name");
+        String no = parameter.get("no");
+        String email = parameter.get("email");
+        String phone = parameter.get("phone");
+
+        EmployeeDTO empDTO = new EmployeeDTO();
+        empDTO.setEmpId(id); // 마찬가지
+        empDTO.setEmpName(name);
+        empDTO.setEmpNo(no);
+        empDTO.setEmail(email);
+        empDTO.setPhone(phone);
+
+        if(empService.updateEmployee(empDTO)) {
+            printResult.printSuccessMessage("updateEmployee");
+        } else {
+            printResult.printErrorMessage("updateEmployee");
+        }
+    }
 }
