@@ -45,7 +45,7 @@
         UPDATE
         EMPLOYEE
         <set>
-            <if test="empName != null and empName =''">
+            <if test="empName != null and empName !=''">
                 EMP_NAME = #{empName}
             </if>
             <if test="empNo != null and empNo !=''">
