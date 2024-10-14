@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class View_LES {
-    public static void View_LES() {
+    public void View_LES() {
 
         Scanner sc = new Scanner(System.in);
         EmployeeController_LES empControllerLES = new EmployeeController_LES();

@@ -10,7 +10,7 @@ public class PrintResult_LES {
             System.out.println(emp);
         }
         System.out.println();
-        System.out.println("전체조회를 완료했습니다");break;
+        System.out.println("전체조회를 완료했습니다");
     }
 
     public void printerror(String error) {
