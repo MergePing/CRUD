@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class View_JYS {
 
-    public static void View_JYS() {
+    public void View_JYS() {
 
         Scanner sc = new Scanner(System.in);
         EmployeeController_JYS jys = new EmployeeController_JYS();
@@ -32,10 +32,10 @@ public class View_JYS {
                     break;
                 case 3:
                     jys.modifyEmp(updateEmp());
-
-
+                    break;
                 case 4 :
                     jys.deleteEmp(inputEmployeeCode());
+                    break;
             }
 
         } while (true);
@@ -54,7 +54,7 @@ public class View_JYS {
         String no = sc.nextLine();
         System.out.print("새로운 직원의 이메일을 입력하세요 : ");
         String email = sc.nextLine();
-        System.out.println("새로운 직원의 전화번호를 입력하세요 : ");
+        System.out.print("새로운 직원의 전화번호를 입력하세요 : ");
         String phone = sc.nextLine();
 
         Map<String, String> parameter = new HashMap<>();
@@ -92,7 +92,7 @@ public class View_JYS {
 
     public static Map<String, String> inputEmployeeCode() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("삭제할 직원 코드를 입력하세요");
+        System.out.print("삭제할 직원 코드를 입력하세요 : ");
         String id = sc.nextLine();
 
         Map<String, String> parameter = new HashMap<>();
