@@ -23,18 +23,21 @@ public class View_JYS {
             System.out.print("메뉴 번호를 입력해 주세요 : ");
             int no = sc.nextInt();
 
-            switch (no){
-                case 1 :
+            switch (no) {
+                case 1:
                     jys.selectAll();
                     break;
-                case 2 :
+                case 2:
                     jys.addEmp(insertEmp());
                     break;
+                case 3:
+                    jys.modifyEmp(updateEmp());
             }
 
         } while (true);
 
     }
+
 
     public static Map<String, String> insertEmp() {
 
@@ -60,4 +63,26 @@ public class View_JYS {
         return parameter;
     }
 
+    private static Map<String, String> updateEmp() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("수정할 직원 코드를 입력하세요 : ");
+        String id = sc.nextLine();
+        System.out.print("수정할 직원 이름을 입력하세요 : ");
+        String name = sc.nextLine();
+        System.out.print("수정할 직원 주민번호를 입력하세요 : ");
+        String no = sc.nextLine();
+        System.out.print("수정할 직원 이메일을 입력하세요 : ");
+        String email = sc.nextLine();
+        System.out.print("수정할 직원 핸드폰번호를 입력하세요 : ");
+        String phone = sc.nextLine();
+
+        Map<String, String> parameter = new HashMap<>();
+        parameter.put("id", id);
+        parameter.put("name", name);
+        parameter.put("no", no);
+        parameter.put("email", email);
+        parameter.put("phone", phone);
+        return parameter;
+    }
 }
