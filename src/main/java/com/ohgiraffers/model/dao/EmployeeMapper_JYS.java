@@ -11,5 +11,7 @@ public interface EmployeeMapper_JYS {
 
     int insertEmployee(EmployeeDTO employeeDTO);
 
-    int updateEmp(EmployeeDTO employeeDTO);
+    int updateEmployee(EmployeeDTO employeeDTO);
+
+    int deleteEmployee(String id);
 }

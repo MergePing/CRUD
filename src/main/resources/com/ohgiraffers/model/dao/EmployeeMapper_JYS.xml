@@ -42,7 +42,7 @@
         )
     </insert>
 
-    <update id="updateEmp" parameterType="com.ohgiraffers.model.dto.EmployeeDTO">
+    <update id="updateEmployee" parameterType="com.ohgiraffers.model.dto.EmployeeDTO">
     UPDATE EMPLOYEE
     SET
     EMP_NAME = #{empName},
@@ -51,5 +51,11 @@
     PHONE = #{phone}
     WHERE EMP_ID = #{empId}
     </update>
+
+    <delete id="deleteEmployee" parameterType="String">
+        DELETE
+        FROM EMPLOYEE
+        WHERE EMP_ID = #{empId}
+    </delete>
 
 </mapper>
