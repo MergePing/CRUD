@@ -49,4 +49,35 @@ public class EmployeeController_HSB {
         }
 
     }
+
+    public void modifyEmployee(Map<String, String> parameter) {
+        String id = parameter.get("id");
+        String name = parameter.get("name");
+        String no = parameter.get("no");
+        String email = parameter.get("email");
+        String phone = parameter.get("phone");
+
+        EmployeeDTO employeeDTO = new EmployeeDTO();
+        employeeDTO.setEmpId(id);
+        employeeDTO.setEmpName(name);
+        employeeDTO.setEmpNo(no);
+        employeeDTO.setEmail(email);
+        employeeDTO.setPhone(phone);
+
+        if(employeeService.modifyEmployee(employeeDTO)){
+            printResult.printSuccessMessage("modify");
+        }else{
+            printResult.printErrorMessage("modify");
+        }
+    }
+
+    public void deleteEmployee(Map<String, String> parameter) {
+        String id = parameter.get("id");
+
+        if(employeeService.deleteEmployeeById(id)){
+            printResult.printSuccessMessage("delete");
+        }else{
+            printResult.printErrorMessage("delete");
+        }
+    }
 }
