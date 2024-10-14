@@ -50,4 +50,26 @@ public EmployeeController_LES(){
         }
 
     }
+
+
+    public void changeEmpInfo(Map<String, String> criteria) {
+        String id = criteria.get("id");
+        String name = criteria.get("name");
+        String num = criteria.get("num");
+        String phone = criteria.get("phone");
+        String email = criteria.get("email");
+
+        EmployeeDTO employeeDTO = new EmployeeDTO();
+        employeeDTO.setEmpId(id);
+        employeeDTO.setEmpName(name);
+        employeeDTO.setEmpNo(num);
+        employeeDTO.setPhone(phone);
+        employeeDTO.setEmail(email);
+
+        if (employeeServiceLes.changeEmpInfo(employeeDTO)){
+            printResultLes.printSuccessMessage("changeEmpInfo");
+        }else {
+            printResultLes.printerror("changeEmpInfo");
+        }
+    }
 }
