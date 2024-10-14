@@ -84,4 +84,14 @@ public class EmployeeController_LHJ {
             printResult.printErrorMessage("updateEmployee");
         }
     }
+
+    public void deleteEmployee(Map<String, String> parameter) {
+        String id = parameter.get("id");
+
+        if(empService.deleteEmployee(id)) {
+            printResult.printSuccessMessage("deleteEmp");
+        } else {
+            printResult.printErrorMessage("deleteEmp");
+        }
+    }
 }
