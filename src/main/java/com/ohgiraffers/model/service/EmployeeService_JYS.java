@@ -1,23 +1,26 @@
 package com.ohgiraffers.model.service;
 
+
 import com.ohgiraffers.model.dao.EmployeeMapper_JYS;
 import com.ohgiraffers.model.dto.EmployeeDTO;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
+
 import java.util.List;
+
+import static com.ohgiraffers.common.Template.getSqlSession;
 
 public class EmployeeService_JYS {
 
-    private final SqlSessionFactory sqlSessionFactory;
+    public List<EmployeeDTO> selectAllEmp() {
 
-    public EmployeeService_JYS(SqlSessionFactory sqlSessionFactory) {
-        this.sqlSessionFactory = sqlSessionFactory;
+        SqlSession sqlSession = getSqlSession();
+        EmployeeMapper_JYS employeeMapper = sqlSession.getMapper(EmployeeMapper_JYS.class);
+
+        List<EmployeeDTO> employeeList = employeeMapper.selectAllMember();
+
+        sqlSession.close();
+        return employeeList;
     }
 
-    public List<EmployeeDTO> getAllMembers() {
-        try (SqlSession session = sqlSessionFactory.openSession()) {
-            EmployeeMapper_JYS mapper = session.getMapper(EmployeeMapper_JYS.class);
-            return mapper.selectAllMember();
-        }
+
     }
-}
